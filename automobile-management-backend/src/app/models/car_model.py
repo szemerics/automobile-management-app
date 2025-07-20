@@ -1,6 +1,6 @@
 from odmantic import Model, Field
-from datetime import date
-from typing import Optional, List, Dict
+from datetime import datetime
+from typing import Optional, Dict
 from enum import Enum
 
 class FuelType(str, Enum):
@@ -32,8 +32,8 @@ class Car(Model):
     engine_power: int
 
     is_sold: bool = False
-    purchase_date: date
-    sale_date: Optional[date] = None
+    purchase_date: datetime
+    sale_date: Optional[datetime] = None
 
     ads: Dict[AdPlatform, str] = {}
 
